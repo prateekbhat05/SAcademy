@@ -1,3 +1,3 @@
 # Sudeeksha-Academy
 Udemy Project Clone
-Video is in Static/video folder
+Video is in :static/video folder
