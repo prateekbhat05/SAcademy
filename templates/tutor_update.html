@@ -1,0 +1,49 @@
+{% extends 'mainadmin./index.html' %}
+{% load static %}
+
+{% block body_block %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <table class="table" style="border: 1px solid black;" >
+        <thead>
+            <tr style="background-color: blueviolet; color : white" >
+                <td>role</td>
+                <td>name</td>
+                <td>email</td>
+                <td>password</td>
+                <td>phone</td>
+                <td>skills</td>
+                <td>Update</td>
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in user_data %}
+            <tr style="border: 2px solid black;">
+                <td style="color : black"><input value="{{ obj.role }}"></td>
+                <td style="color : black"><input value="{{ obj.name }}"></td>
+                <td style="color : black"><input value="{{ obj.email }}"></td>
+                <td style="color : black"><input value="{{ obj.password }}"></td>
+                <td style="color : black"><input value="{{ obj.phone }}"></td>
+                <td style="color : black"><input value="{{ obj.skills }}"></td>
+                <td style="color : black"><button>Update</button></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
+
+{% endblock %}

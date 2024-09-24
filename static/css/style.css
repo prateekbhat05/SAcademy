@@ -1,0 +1,99 @@
+
+body, h1, p, label, input, textarea, select {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+
+body {
+    padding-top: 30%;
+    background-color: #ffc9f1;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the main heading */
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Style the form container */
+.form {
+    background-color: #9e92bd;
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style each form group */
+div {
+    margin-bottom: 20px;
+}
+
+/* Style the labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style the input fields, textarea, and select */
+input[type="text"], input[type="number"], input[type="file"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Style the buttons */
+input[type="submit"], input[type="reset"], button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #6a5acd;
+    color: white;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, button[type="button"]:hover {
+    background-color: #483d8b;
+}
+
+/* Additional styling for better visuals */
+input[type="file"] {
+    padding: 3px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-btn{
+    height: 50px;
+    width: 75px;
+    background-color: #ffc9f1;
+    margin-left: 43%;
+    border-radius: 8px;
+}

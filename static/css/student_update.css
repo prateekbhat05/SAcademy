@@ -1,0 +1,55 @@
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 35%;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px 2px black;
+    margin-left: 40%;
+    
+    background-color: rgba(255, 255, 255, 0.527);
+    
+}
+form input{
+    height: 30px;
+}
+form select{
+    height: 30px;
+}
+body h1{
+    color:rgb(23, 172, 23);
+    margin-left: 3%;
+    margin-top: 2%;
+
+}
+.update{
+    width: 100px;
+    margin-left:40%;
+}
+.form-container h2{
+    margin-left:50%;
+    color:deeppink;
+
+}
+body{
+    background-image: url("../images/s_u1.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+button{
+    
+    padding: 20px ;
+    background:blueviolet;
+    color: black;
+    font-weight:600;
+    border-radius: 30px;
+    border: 1px solid blueviolet;
+    outline: none;
+    margin: 10px 0;
+    cursor: pointer;
+
+}
+button:hover{
+    color: white;
+    background-color: black;
+}

@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Placement Form</title>
+    <link rel="stylesheet" href="{% static 'css/placement.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h1>Placement Form</h1>
+            <div class="form-field">
+                <input type="text" id="companyName" name="companyName" placeholder=" " required>
+                <label for="companyName">Company Name</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="role" name="role" placeholder=" " required>
+                <label for="role">Role</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="skills" name="role" placeholder=" " required>
+                <label for="skills">Skills</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="number" id="salary" name="salary" placeholder=" " required>
+                <label for="salary">Salary</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="location" name="location" placeholder=" " required>
+                <label for="location">Expected Location</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <button type="submit" class="submit-button" onclick="check();">Submit</button>
+      
+    </div>
+
+    <script>
+        function addSkill() {
+            const skillSelect = document.getElementById('skills');
+            const selectedSkill = skillSelect.value;
+
+            if (selectedSkill && !document.querySelector(`.skill-list li[data-skill="${selectedSkill}"]`)) {
+                const skillList = document.getElementById('skillList');
+                const li = document.createElement('li');
+                li.textContent = selectedSkill;
+                li.setAttribute('data-skill', selectedSkill);
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.className = 'remove-skill-button';
+                removeButton.onclick = function () {
+                    skillList.removeChild(li);
+                };
+
+                li.appendChild(removeButton);
+                skillList.appendChild(li);
+                skillSelect.value = ''; // Clear selection
+            }
+        }
+        function check()
+        {
+            var companyName = $('#companyName').val();
+            var role = $('#role').val();
+            var skills = $('#skills').val();
+            var salary = $('#salary').val();
+            var location = $('#location').val();
+
+
+            $.ajax({
+                type: "POST",
+                url: "/adminsite/jobsdetails",
+                data: {"companyName": companyName, "role": role, "skills":skills,"salary": salary, "location":location },
+                success: function(data)
+                {
+                    console.log("data: ", data);
+                    alert("job registered succssfully")
+                    window.location.replace("/adminsite/job_detailsview");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

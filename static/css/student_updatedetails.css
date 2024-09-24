@@ -1,0 +1,25 @@
+body{
+    color:black;
+    font-size: 20;
+    font-family: 'Gill Sans';
+    margin: 0;
+    padding: 20px;
+
+}
+.update_details {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.update_details th,
+.update_details td {
+    border: 1px solid #0f0a0a;
+    padding: 12px;
+    text-align: left;
+}
+
+.update_details thead {
+    background-color: #4ca0af;
+    color: white;
+}
+

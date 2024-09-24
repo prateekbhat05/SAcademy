@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="{% static '/css/course.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Course</title>
+</head>
+<body>
+    <header>
+        <p class="udemy">S'COURSE</p>
+        <select class="categories">
+            <option value="" disabled selected style="display: none;">Categories</option>
+            <option value="Front-End">Front-End</option>
+            <option value="Back-End">Back-End</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Data Analysis">Data Analysis</option>
+            <option value="Cloud Computing">Cloud Computing</option>
+            <option value="Web Design">Web Design</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+        </select>
+        <input type="text" id="search_box" class="search-box" placeholder="What course are you looking for?">
+        <div class="header-container">
+            <button class="header-btn">About</button>
+            <button class="header-btn">Login</button>
+            <button class="header-btn">Register</button>
+            <button class="header-btn">Jobs</button>
+            <button class="header-btn">Contact</button>
+        </div>
+    </header>
+
+    <div class="course-info">
+        <div class="courses-info">
+            <img src="{% static '/images/html.png' %}" alt="html course">
+            <h1>Introduction to HTML</h1>
+            <p>Language used: English</p>
+            <p>Instructor: John</p>
+            
+            <p>800 users enrolled</p>
+            <button>Pay Now</button>
+        </div>
+    
+        <div class="course-details">
+            <h3>Guided Project</h3>
+            <p>Learn and practice hands on to crack front end development jobs.</p>
+            <hr>
+            <h3>Beginner level</h3>
+            <h3>Estimated time: 55 minutes</h3>
+            <p style="text-indent: 15px;">Learn at your own pace</p>
+            <h3>No downloads or installation required</h3>
+            <p style="text-indent: 15px;">Can be only taken on desktop</p>
+            <h3>4.2 <span class="material-symbols-outlined star-icon">star</span> (800 reviews)</h3>
+        </div>
+    </div>
+    <div class="course-container">
+        <h2>What you'll learn?</h2>
+        <div class="column">
+            <p><span class="material-symbols-outlined check">check</span>Use text editor to create and edit files</p>
+            <p><span class="material-symbols-outlined check">check</span>Generate websites using HTML</p>
+            <p><span class="material-symbols-outlined check">check</span>Learn the web development process.</p>
+        </div>
+    </div>
+    <div class="skills-container">
+        <h2>Skills you'll practice</h2>
+        <div class="skills">
+            <button>HTML</button>
+            <button>Web Development</button>
+            <button>Web Page</button>
+        </div>
+    </div>
+
+    <div>
+        <h2>Modules included in this course</h2>
+        <select class="modules-list">
+            <option>Quick Introduction - 2 lectures | 5 mins
+            </option>
+            <option>HTML Setup</option>
+            <option>Basic Elements of HTML</option>
+            <option>Basics of creating a HTML Page</option>
+            <option>Working with different tags in HTML</option>
+            <option>Adding HTML links</option>
+            <option>Creating HTML Tables</option>
+            <option>Creating and working with HTML Forms</option>
+            <option>Course Completion</option>
+        </select>
+    </div>
+    
+    <h2>Why people choose S'Course for their career?</h2>
+    <div class="reviews">
+        
+        <div class="course-reviews">
+            <p>"To be able to take courses at my own pace and rhythm has been an amazing experience. I can learn whenever it fits my schedule and mood."</p>
+        </div>
+        <div class="course-reviews">
+            <p>"To be able to take courses at my own pace and rhythm has been an amazing experience. I can learn whenever it fits my schedule and mood."</p>
+        </div>
+        <div class="course-reviews">
+            <p>"To be able to take courses at my own pace and rhythm has been an amazing experience. I can learn whenever it fits my schedule and mood."</p>
+        </div>
+        <div class="course-reviews">
+            <p>"To be able to take courses at my own pace and rhythm has been an amazing experience. I can learn whenever it fits my schedule and mood."</p>
+        </div>
+
+    </div>
+
+    <h2>Course Reviews</h2>
+    <div class="ratings">
+        <div class="ratings-stars">
+            <h3>4.2 <span class="material-symbols-outlined star-icon">star</span> (800 reviews)</h3>
+            <p>5 stars <progress value="65" max="100" class="progress-bar">65%</progress></p>
+            <p>4 stars <progress value="25" max="100">25%</progress></p>
+            <p>3 stars <progress value="10" max="100">10%</progress></p>
+            <p>2 stars <progress value="2.5" max="100">2.5%</progress></p>
+            <p>1 stars <progress value="3.5" max="100">3.5%</progress></p>
+        </div>
+
+        <div class="ratings-content">
+            <div class="ratings-info">
+                <button>V</button>
+                <p>Very good course. It was really helpful. The teaching was top-notch.</p>
+            </div>
+            <div class="ratings-info">
+                <button>S</button>
+                <p>It was very basic but very good course. It was really helpful. The teaching was top-notch.</p>
+            </div>
+            <div class="ratings-info">
+                <button>MN</button>
+                <p>Very good course. It was really helpful. The teaching was top-notch.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+        <div class="questions">
+            <button id="q1" onclick="displayContent(id);">Is financial aid available?</button>
+            <p id="answer-one"></p>
+        </div>
+        <div class="questions">
+            <button id="q2" onclick="displayContent(id);">Is financial aid available?</button>
+            <p id="answer-two"></p>
+        </div>
+        <div class="questions">
+            <button id="q3" onclick="displayContent(id);">Is financial aid available?</button>
+            <p id="answer-three"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li>Business</li>
+                <li>Teach on udemy</li>
+                <li>Get the app</li>
+                <li>About</li>
+                <li>Cookie Settings</li>
+            </ul>
+            <ul>
+                <li>Blog</li>
+                <li>Help</li>
+                <li>Affiliate</li>
+                <li>Privacy policy</li>
+                <li>Terms</li>
+            </ul>
+            
+            <div class="social">
+                <p>Don't forget to follow us!</p>
+                <div>
+                    <button><img src="{% static '/images/instagram.png' %}"></button>
+                    <button><img src="{% static '/images/linkedin.png' %}"></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+</body>
+<script src="script.js"></script>
+</html>

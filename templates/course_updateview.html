@@ -1,0 +1,74 @@
+{% extends './mainadmin/index.html' %}
+{% load static %}
+
+{% block body_block %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Details</title>
+    <link rel="stylesheet" href="{% static 'css/student_registerdetails.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Language</th>
+            <th>Instructor name</th>
+            <th>Level</th>
+            <th>Time</th>
+            <th>Details</th>
+            <th>Cost</th>
+            <th>update</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in user_data %}
+            <tr>
+                <td><input id="ctitle{{obj.ctitle}}" type="text" value={{obj.ctitle}}></td>
+                <td><input id="clanguage{{obj.ctitle}}" type="text" value={{obj.clanguage}}></td>
+                <td><input id="iname{{obj.ctitle}}" type="text" value={{obj.iname}}></td>  
+                <td><input id="clevel{{obj.ctitle}}" type="text" value={{obj.clevel}}></td>
+                <td><input id="ctime{{obj.ctitle}}" type="text" value={{obj.ctime}}></td>
+                <td><input id="cdetails{{obj.ctitle}}" type="text" value={{obj.cdetails}}></td>
+                <td><input id="ccost{{obj.ctitle}}" type="text" value={{obj.ccost}}></td>
+                <td><button onclick="updaterec('{{obj.ctitle}}')">Update</button></td>
+
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    function updaterec(ctitle){
+        var ctitle = $('#ctitle'+ctitle).val();
+        var clanguage = $('#clanguage'+ctitle).val();
+        var iname = $('#iname'+ctitle).val();
+        var clevel = $('#clevel'+ctitle).val();
+        var ctime = $('#ctime'+ctitle).val();
+        var cdetails = $('#cdetails'+ctitle).val();
+        var ccost = $('#ccost'+ctitle).val();
+
+        $.ajax({
+            type:'POST',
+            url:'/course/update_course',
+            data:{"ctitle":ctitle,"clanguage":clanguage,"iname":iname,"clevel":clevel,"ctime":ctime,"cdetails":cdetails,"ccost":ccost},
+            success:function(data)
+            {
+                window.location.replace("/adminsite/course_updateview");
+            }
+        });
+
+    }
+</script>
+
+</body>
+
+</html>
+{% endblock %}
+

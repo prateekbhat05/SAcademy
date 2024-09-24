@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/tutor_dashboard.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="{% url 'course_form' %}">Upload Course</a></li>
+
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header>
+                <h1>Tutor Dashboard</h1>
+            </header>
+            <section class="stats">
+                <div class="stat-card">
+                    <h2>Name</h2>
+                    <p id="courses-uploaded">{{ currentuser }}</p>
+                </div>
+                <div class="stat-card">
+                    <h2>Email</h2>
+                    <p id="assignments-created">{{ email }}</p>
+                </div>
+                <div class="stat-card">
+                    <h2>Password</h2>
+                    <p id="quizzes-created">{{ password }}</p>
+                </div>
+                <div class="stat-card">
+                  <h2>Number</h2>
+                  <p id="quizzes-created">{{ phone_no }}</p>
+              </div>
+            </section>
+            
+        </main>
+    </div>
+</body>
+</html>

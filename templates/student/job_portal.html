@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Job Listings</h1>
+        <div class="row">
+            {% for job in jobs %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ job.companyName }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ job.role }}</h6>
+                            <p class="card-text">
+                                <strong>Skills Required:</strong> {{ job.skills }}<br>
+                                <strong>Location:</strong> {{ job.location }}<br>
+                                <strong>Salary:</strong> {{ job.salary  }} 
+                            </p>
+                            <a href="{% url 'job_application' %}?role={{ job.role }}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS (optional for features like modals) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{%static '/css/homepagestyle.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="nav__links nav_left">
+                <li><a href="#" class="logo" aria-label="Sudeeksha Academy Homepage">Sudeeksha Academy</a></li>
+                
+                
+            </ul>
+           
+        </nav>
+        <span class="Letter-s" style="justify-self: center;">S</span>
+        <div class="img">
+            <img src="https://www.pngall.com/wp-content/uploads/2018/05/Books-PNG-HD.png" alt="header" style="justify-content: center;" />
+        </div>
+        <h4 class="text__left">Sudeeksha</h4>
+        <h4 class="text__right">Academy</h4>
+        <a href="{% url 'studentcourse' %}"><button class="btn explore" id="explore">EXPLORE MORE</button></a>
+       
+        <br>
+        <h5 class="feature-1">READ</h5>
+        <h5 class="feature-2">LEAD</h5>
+        <h5 class="feature-3">LEARN</h5>
+        <h5 class="feature-4">EARN</h5>
+        <footer class="footer">
+            <p>Copyright &copy;P2R2A</p>
+            <ul class="footer__links">
+                <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+</body>
+</html>

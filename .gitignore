@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+"*.pyc" 
+"__pycache__/" 
+=======
+*.pyc
+__pycache__/
+/__pycache__/
+env/
+.cache
+.env
+venv/
+ENV/
+media/
+>>>>>>> dd84ca354db4b2498a0ca1ea3db286b8a7f2cfcd

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/tutor_dashboard.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="{% url 'UserProfileView' %}">Profile</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="{% url 'course_form' %}">Upload Course</a></li>
+
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header>
+                <h1>Tutor Dashboard</h1>
+            </header>
+            <section class="stats">
+            </section>
+            <section class="course-list">
+                <h2>Courses</h2>
+                <ul id="course-names">
+                {% for item in courses %}
+                    <p>{{item.ctitle}}</p>
+                {% endfor %}
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

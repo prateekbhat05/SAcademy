@@ -1,0 +1,46 @@
+{% extends './index.html' %}
+{% load static %}
+
+{% block body_block %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Details</title>
+    <link rel="stylesheet" href="{% static 'css/student_registerdetails.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Highest Qualification</th>
+            <th>update</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in user_data %}
+            <tr>
+                <td><input type="text" value={{obj.name}}></td>
+                <td><input type="text" value={{obj.phone_no}}></td>
+                <td><input type="text" value={{obj.age}}></td>  
+                <td><input type="text" value={{obj.email}}></td>
+                <td><input type="text" value={{obj.highest_qualification}}></td>
+                <td><button>Update</button></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+
+</html>
+{% endblock %}
+

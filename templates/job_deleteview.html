@@ -1,0 +1,64 @@
+{% extends './mainadmin/index.html' %}
+{% load static %}
+{% block body_block %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Details</title>
+    <link rel="stylesheet" href="{% static 'css/student_registerdetails.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <table>
+    <thead>
+        <tr>
+            <th>company name</th>
+            <th>role</th>
+            <th>skills</th>
+            <th>salary</th>
+            <th>location</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in user_data %}
+            <tr>
+                <td>{{ obj.companyName }}</td>
+                <td>{{ obj.role }}</td>
+                <td>{{ obj.skills }}</td>  
+                <td>{{ obj.salary }}</td>
+                <td>{{ obj.location }}</td>
+                <td><button onclick="deletefromdb('{{ obj.companyName }}')">Delete</button></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+<script>
+    function deletefromdb(companyname) {
+        $.ajax({
+            type: "POST",
+            url: "/adminsite/delete_job",
+            data: {
+                "companyname": companyname,
+                "csrfmiddlewaretoken": '{{ csrf_token }}'
+            },
+            success: function(data) {
+                window.location.replace("/adminsite/job_delete");
+            },
+            error: function(xhr, status, error) {
+                console.error("An error occurred: " + error);
+            }
+        });
+    }
+</script>
+</html>
+{% endblock %}
+

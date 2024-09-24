@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE FORM</title>
+    <link rel="stylesheet" href="{% static '/css/student_update.css'%}"> 
+</head>
+<body>
+    <h1>SG ACADEMY</h1>
+    <div class="form-container">
+        <h2>UPDATE FORM</h2>
+        <div class="form">
+            <form action="#" method="post">
+     
+                <label>STUDENT NAME</label>
+                <input type="text" name="full_name" placeholder="Full Name" id="fullname" required>
+<br>
+                <label>AGE</label>
+                <input type="number" name="age" min="1" max="100" placeholder="Enter your age" id="age" required>
+<br>
+<div class="gender">
+                <label>GENDER</label>
+                <br>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+<br>
+                <label>PHONE NO</label>
+                <input type="tel" name="phone_number"  placeholder="Enter your number" required minlength="10" maxlength="10" id="number">
+<br>
+                <label>HIGHEST QUALIFICATION</label>
+                <select name="qualification" id="qualification-dropdown" required>
+                    <option value="select">select</option>
+                    <option value="BE">BE</option>
+                    <option value="B.com">B.com</option>
+                    <option value="B.A">B.A</option>
+                    <option value="BBA">BBA</option>
+                    <option value="mcom">M.com</option>
+                    <option value="MA">M.A</option>
+                    <option value="Btec">B.tec</option>
+                    <option value="Mtec">M.tec</option>
+                    <option value="MBA">MBA</option>
+                </select>
+<br>
+                <label>E-MAIL</label>
+                <input type="email" name="email" placeholder="xxxxxxx@gmail.com" id="mail" required>
+
+                <br>
+                
+                <button type="submit" class="update" onclick="check();">UPDATE</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+     function check()
+    {
+       var name = $('#fullname').val();
+       var age = $('#age').val();
+       var mail = $('#mail').val();
+       var qualification = $('#qualification-dropdown').val();
+       var phone = $('#number').val();
+
+
+       $.ajax({
+        type: "POST",
+        url: "student/student_updatedetails",
+        data: {"username": name, "age": age, "phone":phone,"mail": mail, "qualification":qualification },
+        success: function(data)
+        {
+            window.location.replace("student/view_student_updatedetails");
+        }
+    })
+}
+</script>
+</html>

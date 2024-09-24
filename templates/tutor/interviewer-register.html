@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/mainandint.css' %}">
+    <title>Interview details</title>
+</head>
+<body style="background-color: rgb(255, 246, 247);">
+    <div class="interview-content">
+        <img class="interview-img" src="{% static '/images/interviewi.png' %}">
+        <div class="grey-area">
+            <form class="interview-form">
+                <h3>Enter the interview details:</h3>
+                <label for="interview_id">Interview ID:</label>
+                <input type="text" id="interview_id"><br>
+                <label for="interviewer_name">Interviewer name:</label>
+                <input type="text" id="interviewer_name"><br>
+                <label for="course_id">Course ID:</label>
+                <input type="text" id="course_id"><br>
+                <label for="interview_date">Interview date:</label>
+                <input type="date" id="interview_date"><br>
+                <label for="interview_time">Interview time:</label>
+                <input type="time" id="interview_time"><br>
+                <button type="submit" class="submit-btn"><a href="interview-details.html">Submit</a></button>
+                
+            </form>
+        </div>
+    </div>
+    
+</body>
+
+</html>

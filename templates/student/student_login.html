@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <link rel="stylesheet" href="{% static '/css/student_login.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+</head>
+<body>
+    <h1>
+        SG ACADEMY
+    </h1>
+ 
+    <div class="login">
+        <h2>LOGIN</h2>
+        <Label>USER NAME </Label>
+        <input type="text"   placeholder="enter your user name"id=username>
+        <br>
+        <Label>PASSWORD</Label>
+        <input type="password" placeholder="enter your password"id=pass>
+
+    <br>
+    <button onclick="checkAuth()">LOGIN</button>
+    <br>
+    <div class="pass">
+        <a>FORGOT PASSWORD</a>
+    </div>
+</div>
+<script>
+    function checkAuth()
+        {
+            var username = $('#username').val();
+            var password = $('#pass').val();
+            
+            $.ajax({
+                type:'POST',
+                url:'/student/login_check',
+                data:{"username":username, "password":password},
+                success: function(data){
+                   if (data["status"] == "pass")
+                    {
+                     if(data["role"] == "tutor")
+                     {
+                        window.location.replace("/tutor/tutor_dashboard")
+                     }
+                      else if(data["role"] == "student")
+                     {
+                        window.location.replace("/student/dashboard")
+                     }
+                     else if(data["role"] == "admin")
+                     {
+                        window.location.replace("/admin")
+                     }
+                    }
+                   else
+                   {
+                    alert("login failed");
+                   }
+                }
+            });
+        }
+
+</script>
+</body>
+</html>

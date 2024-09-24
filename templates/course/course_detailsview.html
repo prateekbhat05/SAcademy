@@ -1,0 +1,50 @@
+{% extends './mainadmin/index.html' %}
+{% load static %}
+{% block body_block %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Details</title>
+    <link rel="stylesheet" href="{% static 'css/student_registerdetails.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Language</th>
+            <th>Instructor name</th>
+            <th>Level</th>
+            <th>Time</th>
+            <th>Details</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in user_data %}
+            <tr>
+                <td>{{ obj.ctitle }}</td>
+                <td>{{ obj.clanguage }}</td>
+                <td>{{ obj.iname }}</td>
+                <td>{{ obj.clevel }}</td>
+                <td>{{ obj.ctime }}</td>
+                <td>{{ obj.cdetails }}</td>  
+                <td>{{ obj.ccost }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+
+    
+</html>
+{% endblock %}
+

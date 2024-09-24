@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Placement Form</title>
+    <link rel="stylesheet" href="{% static 'css/placement.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+
+</head>
+<body>
+    <div class="form-wrapper">
+        <h1>Placement Form</h1>
+            <div class="form-field">
+                <input type="text" id="companyName" name="companyName" placeholder=" " required>
+                <label for="companyName">Company Name</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="role" name="role" placeholder=" " required>
+                <label for="role">Role</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="skills" name="skills" placeholder=" " required>
+                <label for="role">Skills</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="number" id="salary" name="salary" placeholder=" " required>
+                <label for="salary">Salary</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="location" name="location" placeholder=" " required>
+                <label for="location">Expected Location</label>
+                <span class="focus-border"></span>
+            </div>
+
+            <button type="submit" class="submit-button" onclick="check()">Submit</button>
+    </div>
+
+    <script>
+        function check()
+        {
+            var companyName = $('#companyName').val();
+            var role = $('#role').val();
+            var skills = $('#skills').val();
+            var salary = $('#salary').val();
+            var location = $('#location').val();
+
+
+            $.ajax({
+                type:"POST",
+                url:"/adminsite/jobsdetails",
+                data: {"companyName": companyName, "role": role, "skills":skills,"salary": salary, "location":location },
+                success: function(data)
+                {
+                    alert("job registered succssfully")
+                    window.location.replace("/student/dashboard");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

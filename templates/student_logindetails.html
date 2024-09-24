@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Details</title>
+    <link rel="stylesheet" href="{% static 'css/student_logindetails.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Login Details</h1>
+    <table class="login-details">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in userdata %}
+            <tr>
+                <td>{{ obj.username }} </td>
+                <td>{{ obj.password }}</td>
+                <td><button onclick="deletefromdb('{{ obj.username }}')">Delete</button></td>
+                
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+</body>
+<script>
+    function deletefromdb(username){
+        $.ajax({
+        type: "POST",
+        url: "/student/delete_student",
+        data: {"username": username},
+        success: function(data)
+        {
+            window.location.replace("/student/view_student_logindetails");
+        }
+        
+       });
+    }
+</script>
+</html>

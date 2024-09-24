@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Details</title>
+    <link rel="stylesheet" href="{% static 'css/login_details.css' %}">
+</head>
+<body>
+    <h1>Login Details</h1>
+    <table class="login-details">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Last Login</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>user1</td>
+                <td>********</td>
+                <td>2024-08-30 09:00</td>
+                <td>Active</td>
+            </tr>
+            <tr>
+                <td>user2</td>
+                <td>********</td>
+                <td>2024-08-29 15:30</td>
+                <td>Inactive</td>
+            </tr>
+            <tr>
+                <td>user3</td>
+                <td>********</td>
+                <td>2024-08-28 12:45</td>
+                <td>Active</td>
+            </tr>
+            <tr>
+                <td>user4</td>
+                <td>********</td>
+                <td>2024-08-27 08:20</td>
+                <td>Inactive</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

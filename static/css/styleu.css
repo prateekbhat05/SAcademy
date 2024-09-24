@@ -1,0 +1,95 @@
+
+body, h1, p, label, input, textarea, select {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e6e6fa, #dcdcdc); /* Lavender gradient */
+    color: #333;
+    padding: 20px;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #6a0dad; /* Lavender color for header */
+}
+
+.cover-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #6a0dad; /* Lavender color for labels */
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Textarea specific styling */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Button styling */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-buttons input[type="submit"],
+.form-buttons input[type="reset"] {
+    background: linear-gradient(to right, #9a4d8d, #6a0dad); /* Lavender gradient for buttons */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-buttons input[type="reset"] {
+    background: linear-gradient(to right, #8a8a8a, #6c757d); /* Darker grey gradient for reset button */
+}
+
+.form-buttons input[type="submit"]:hover,
+.form-buttons input[type="reset"]:hover {
+    opacity: 0.9;
+}

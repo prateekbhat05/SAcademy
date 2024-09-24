@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{% static '/css/student_registeration.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+</head>
+
+<body>
+    <h1>SG ACADEMY</h1>
+    
+
+    <div class="REGISTERATION-FORM">
+        <h1>REGISTERATION FORM</h1>
+        <div class="r1">
+        <img src="{% static '/images/s_r1.png' %}">
+        <div class="form">
+     
+            <div class="forms">
+            <input type="text"  placeholder="NAME" id="name" required>
+        </div>
+        <div class="forms">
+            <input type="text"  placeholder="AGE" id="age" required>
+        </div>
+        <div class="forms">
+            <input type="text"  placeholder="USERNAME" id="username" required>
+        </div>
+        <div class="forms">
+            <input type="password"  placeholder="PASSWORD" id="password" required>
+        </div>
+        <div class="forms">
+            <input type="tel"  placeholder="PHONE NO" required  minlength="10" maxlength="10" id="phone">
+        </div>
+
+            <label>HIGHEST QUALIFICATION</label>
+            <select name="qualification" id="qualification-dropdown" required style="width: 100px;"  >
+                <option value="select" style="display: none;">select</option>
+                <option value="BE">BE</option>
+                <option value="B.com">B.com</option>
+                <option value="B.A">B.A</option>
+                <option value="BBA">BBA</option>
+                <option value="mcom">M.com</option>
+                <option value="MA">M.A</option>
+                <option value="Btec">B.tec</option>
+                <option value="Mtec">M.tec</option>
+                <option value="MBA">MBA</option>
+                <option value="high school">High School</option>
+                <option value="puc">PUC</option>
+                <option value="phd">PhD</option>
+            </select>
+            <label>ROLE</label>
+            <select  name="roles" id="role"  style="width: 100px;" required >
+                <option value="tutor">Tutor</option>
+                <option value="student">Student</option>
+            </select>
+<br>
+        <div class="forms">
+            <input type="email"  placeholder="EMAIL" required id="mail">
+        </div>
+            <div class="flex-coloum">
+                <input type="checkbox" >
+                <p>I accept the terms and condition</p>
+            </div>
+            <button type="submit" class="update" style="color: white;" onclick="check();">REGISTER</button>
+            <p id="alert">already registered? <a href="/student/login">Login</a></p>
+        </div>
+    </div>
+    </div>
+</div>
+<script>
+    function check()
+    {
+       var name = $('#name').val();
+       var age = $('#age').val();
+       var username = $('#username').val();
+       var password = $('#password').val();
+       var mail = $('#mail').val();
+       var qualification = $('#qualification-dropdown').val();
+       var phone = $('#phone').val();
+       var role = $('#role').val();
+
+
+       $.ajax({
+        type: "POST",
+        url: "/student/student_registerdetails",
+        data: {"name": name, "age": age, "phone":phone,"mail": mail, "qualification":qualification, "username":username, "password": password, "role" : role },
+        success: function(data)
+        {
+            console.log("data: ", data);
+            alert("user registered succssfully")
+            window.location.replace("/student/login");
+        }
+    })
+}
+
+
+</script>
+</body>
+
+
+</html>

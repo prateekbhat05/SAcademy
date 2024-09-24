@@ -1,0 +1,78 @@
+{% extends './mainadmin/index.html' %}
+{% load static %}
+
+{% block body_block %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Details</title>
+    <link rel="stylesheet" href="{% static 'css/student_registerdetails.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Highest Qualification</th>
+            <th>username</th>
+            <th>role</th>
+            <th>password</th>
+            <th>update</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in user_data %}
+            <tr>
+                <td><input id="name{{obj.phone_no}}" type="text" value={{obj.name}}></td>
+                <td><button onclick="updaterec('{{obj.phone_no}}')">Update</button></td>
+
+                <td><input id="phone_no{{obj.phone_no}}" type="text" value={{obj.phone_no}}></td>
+                <td><input id="age{{obj.phone_no}}" type="text" value={{obj.age}}></td>  
+                <td><input id="email{{obj.phone_no}}" type="text" value={{obj.email}}></td>
+                <td><input id="highest_qualification{{obj.phone_no}}" type="text" value={{obj.highest_qualification}}></td>
+                <td><input id="username{{obj.phone_no}}" type="text" value={{obj.username}}></td>
+                <td><input id="role{{obj.phone_no}}" type="text" value={{obj.role}}></td>
+                <td><input id="password{{obj.phone_no}}" type="text" value={{obj.password}}></td>
+
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    function updaterec(mob){
+        var username = $('#username'+mob).val();
+        var name = $('#name'+mob).val();
+        var phone_no = $('#phone_no'+mob).val();
+        var age = $('#age'+mob).val();
+        var email = $('#email'+mob).val();
+        var highest_qualification = $('#highest_qualification'+mob).val();
+        var role = $('#role'+mob).val();
+        var password = $('#password'+mob).val();
+
+        $.ajax({
+            type:'POST',
+            url:'/student/update_student',
+            data:{"username":username,"name":name,"phone_no":phone_no,"age":age,"email":email,"highest_qualification":highest_qualification,"role":role,"password":password},
+            success:function(data)
+            {
+                window.location.replace("/adminsite/student_updateview");
+            }
+        });
+
+    }
+</script>
+
+</body>
+
+</html>
+{% endblock %}
+

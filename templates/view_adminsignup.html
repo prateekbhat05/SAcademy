@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <table class="table" style="border: 1px solid black;">
+            <thead>
+                <tr style="background-color: blueviolet; color: white;">
+                    <td>Name</td>
+                    <td>Phone Number</td>
+                    <td>Email</td>
+                    <td>Password</td>
+                </tr>
+            </thead>
+                {% for obj in userdata %}
+                <tr>
+                    <td>{{ obj.username }}</td>
+                    <td>{{ obj.phone_number }}</td>
+                    <td>{{ obj.email }}</td>
+                    <td>{{ obj.password }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

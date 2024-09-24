@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="{% static '/css/form.css' %}">
+</head>
+<body>
+  <div class="header-container">
+    <h1>Well Now You are an Instructor!!<h1>
+</div>
+    <section class="contact" id="contact">
+  
+        
+      
+        <div class="container">
+          <div class="content">
+            <div class="image-box">
+              <img draggable="false" src="{% static '/images/contact1.jpeg.png' %}" alt="">
+            </div>
+            <div class="form-container">
+              
+              <form action="table.html" method="get">
+                  <div class="form-group">
+                      <label for="studentName"> Name</label>
+                      <input type="text" id="studentName" name="studentName" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="reasonForTransition">Reason for Transitioning to an Instructor Role:</label>
+                      <textarea id="reasonForTransition" name="reasonForTransition" rows="4"></textarea>
+                  </div><div class="form-group">
+                      <label for="specialization">Specific Areas of Interest or Specialization:</label>
+                      <input type="text" id="specialization" name="specialization">
+                  </div>
+                  
+                  
+                  
+                      <div class="form-group">
+                          <label for="signature">Signature:</label>
+                          <input type="text" id="signature" name="signature" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="date">Date:</label>
+                          <input type="date" id="date" name="date" required>
+                      </div>
+                  
+            
+                  
+            
+                  <div class="form-group">
+                      <button onclick="submit()">Submit</button>
+            
+                  </div>
+      </section>
+      <script>
+        function submit(){
+            
+        }
+
+        
+    </script>
+    
+</body>
+</html>

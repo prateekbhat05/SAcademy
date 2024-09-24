@@ -1,0 +1,85 @@
+{% load static %}
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+    <a class="sidebar-brand brand-logo" href="../index.html" style="text-decoration: none;"><h1 style="color: white; text-decoration: none;">SDemy</h1></a>
+    <a class="sidebar-brand brand-logo-mini" href="../index.html"><img src="{% static '/images/logo-mini.svg' %}" alt="logo" /></a>
+  </div>
+  <ul class="nav">
+    <li class="nav-item profile">
+      <div class="profile-desc">
+        
+        
+      </div>
+    </li>
+    <li class="nav-item nav-category">
+      <span class="nav-link">Navigation</span>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="/adminsite">
+        <span class="menu-icon">
+          <i class="mdi mdi-speedometer"></i>
+        </span>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    
+    <li class="nav-item menu-items">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <span class="menu-icon">
+          <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Student</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'student_createregister' %}">Create</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'student_create' %}">Delete</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'student_registerview' %}">view</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'student_updateview' %}">Update</a></li>
+
+        </ul>
+      </div>
+    </li>
+    
+    <li class="nav-item menu-items">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <span class="menu-icon">
+          <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Course</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'course_form' %}">Create</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'course_deleteview' %}">Delete</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'course_detailsview' %}">view</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'course_updateview' %}">Update</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'payment_detailsview' %}">Payment</a></li>
+
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <span class="menu-icon">
+          <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Jobs</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'placement' %}">Create</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'job_delete' %}">Delete</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'job_detailsview' %}">view</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'tutor_updateview' %}">Update</a></li>
+
+        </ul>
+      </div>
+    </li>
+    
+    
+  </ul>
+</nav>
